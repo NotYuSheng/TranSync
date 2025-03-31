@@ -1,6 +1,6 @@
 # 📄 Arabic-to-English XLSX Translator
 
-A containerized tool for batch-translating `.xlsx` spreadsheets from **Arabic to English** using a locally hosted LLM in **LM Studio**. It supports:
+A tool for batch-translating `.xlsx` spreadsheets from **Arabic to English** using a locally hosted LLM in **LM Studio**. It supports:
 
 - ✅ Multi-sheet Excel files
 - ✅ Cell-by-cell translation (only if Arabic is detected)
