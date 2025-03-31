@@ -19,7 +19,7 @@ services:
     volumes:
       - ./data:/app/data
     ports:
-      - "8080:8501"
+      - "8501:8501"
     depends_on:
       - xlsx-translate-backend
     environment:
