@@ -2,11 +2,11 @@ import streamlit as st
 import requests
 import os
 
-st.set_page_config(page_title="Arabic to English XLSX Translator", layout="centered")
-st.title("📄 Arabic to English XLSX Translator")
-st.caption("Upload one or more `.xlsx` files for translation. Only cells with Arabic will be translated.")
+st.set_page_config(page_title="XLSX Translate", layout="centered")
+st.title("📄 XLSX Translate")
 
 uploaded_files = st.file_uploader("Upload Excel files", type=["xlsx"], accept_multiple_files=True)
+st.caption("Upload one or more `.xlsx` files for translation. Only cells with Arabic will be translated.")
 
 if uploaded_files:
     if st.button("Translate Files"):
