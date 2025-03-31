@@ -44,6 +44,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-backend-results.sarif'
+          category: 'trivy-backend'
 
       # Build Frontend Image
       - name: Build frontend Docker image
@@ -65,3 +66,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-frontend-results.sarif'
+          category: 'trivy-frontend'
