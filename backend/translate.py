@@ -4,7 +4,7 @@ import re
 
 # LLM client
 client = openai.OpenAI(
-    base_url="http://192.168.1.121:1234/v1",
+    base_url="http://192.168.1.1:1234/v1",
     api_key="lm-studio"
 )
 
