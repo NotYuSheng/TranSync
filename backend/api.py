@@ -29,7 +29,7 @@ async def translate_multiple_xlsx(files: List[UploadFile] = File(...)):
             excel_file = BytesIO(contents)
 
             # Read all sheets
-            sheet_dict = pd.read_excel(excel_file, engine="openpyxl", sheet_name=None, header=None)
+            sheet_dict = pd.read_excel(excel_file, engine="openpyxl", sheet_name=None, header=0)
 
             print(f"📄 Loaded workbook: {file.filename} with {len(sheet_dict)} sheet(s)")
             translated_dict = translate_workbook(sheet_dict)
@@ -40,7 +40,7 @@ async def translate_multiple_xlsx(files: List[UploadFile] = File(...)):
 
             with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
                 for sheet_name, df in translated_dict.items():
-                    df.to_excel(writer, sheet_name=sheet_name, index=False, header=False)
+                    df.to_excel(writer, sheet_name=sheet_name, index=False, header=True)
 
             print(f"✅ Saved translated file: {output_path}")
             output_paths.append({

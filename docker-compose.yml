@@ -9,7 +9,7 @@ services:
       - "8000:8000"
     environment:
       - TRANSFORMERS_CACHE=/app/cache
-    #restart: unless-stopped
+    restart: unless-stopped
     networks:
       - xlsx-translate-network
   xlsx-translate-frontend:
