@@ -4,8 +4,8 @@ import re
 import os
 
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "http://localhost:1234/v1")
-LLM_MODEL = os.environ.get("LLM_MODEL", "qwen2.5-7b-instruct-1m")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "lm-studio")
+LLM_MODEL = os.environ.get("LLM_MODEL", "qwen2.5-7b-instruct-1m")
 
 # LLM client
 client = openai.OpenAI(
