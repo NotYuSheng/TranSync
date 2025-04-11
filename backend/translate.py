@@ -4,6 +4,7 @@ import re
 import os
 
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "http://localhost:1234/v1")
+LLM_MODEL = os.environ.get("LLM_MODEL", "qwen2.5-7b-instruct-1m")
 LLM_API_KEY = os.environ.get("LLM_API_KEY", "lm-studio")
 
 # LLM client
@@ -28,7 +29,7 @@ def translate_text(text: str) -> str:
 
     try:
         response = client.chat.completions.create(
-            model="qwen2.5-7b-instruct-1m",
+            model=LLM_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
