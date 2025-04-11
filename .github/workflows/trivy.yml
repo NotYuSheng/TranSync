@@ -27,13 +27,13 @@ jobs:
       # Build Backend Image
       - name: Build backend Docker image
         run: |
-          docker build -t docker.io/notyusheng/backend:${{ github.sha }} ./backend
+          docker build -t docker.io/notyusheng/xlsx-translate-backend:${{ github.sha }} ./backend
 
       # Scan Backend Image with Trivy
       - name: Run Trivy on backend image
         uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
         with:
-          image-ref: 'docker.io/notyusheng/backend:${{ github.sha }}'
+          image-ref: 'docker.io/notyusheng/xlsx-translate-backend:${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-backend-results.sarif'
@@ -49,13 +49,13 @@ jobs:
       # Build Frontend Image
       - name: Build frontend Docker image
         run: |
-          docker build -t docker.io/notyusheng/frontend:${{ github.sha }} ./frontend
+          docker build -t docker.io/notyusheng/xlsx-translate-frontend:${{ github.sha }} ./frontend
 
       # Scan Frontend Image with Trivy
       - name: Run Trivy on frontend image
         uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
         with:
-          image-ref: 'docker.io/notyusheng/frontend:${{ github.sha }}'
+          image-ref: 'docker.io/notyusheng/xlsx-translate-frontend:${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-frontend-results.sarif'
