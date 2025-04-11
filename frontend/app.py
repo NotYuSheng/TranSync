@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 import os
 
-st.set_page_config(page_title="XLSX Translate", layout="centered")
-st.title("📄 XLSX Translate")
+st.set_page_config(page_title="TranSync", layout="centered")
+st.title("TranSync")
 
 uploaded_files = st.file_uploader("Upload Excel files", type=["xlsx"], accept_multiple_files=True)
 st.caption("Upload one or more `.xlsx` files for translation. Only cells with Arabic will be translated.")
