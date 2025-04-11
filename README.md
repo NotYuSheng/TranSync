@@ -109,3 +109,10 @@ The project structure is as follows:
 - Ensure Docker and Docker Compose are installed and running on your system.  
 - Verify that the required ports (8000 and 8080) are not in use by other 
 applications.  
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
