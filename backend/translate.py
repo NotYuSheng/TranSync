@@ -1,11 +1,15 @@
 import openai
 import pandas as pd
 import re
+import os
+
+LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "http://localhost:1234/v1")
+LLM_API_KEY = os.environ.get("LLM_API_KEY", "lm-studio")
 
 # LLM client
 client = openai.OpenAI(
-    base_url="http://192.168.1.1:1234/v1",
-    api_key="lm-studio"
+    base_url=LLM_BASE_URL,
+    api_key=LLM_API_KEY
 )
 
 def contains_arabic(text):
@@ -24,7 +28,7 @@ def translate_text(text: str) -> str:
 
     try:
         response = client.chat.completions.create(
-            model="lm-studio",
+            model="qwen2.5-7b-instruct-1m",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
